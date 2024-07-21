@@ -1,78 +1,73 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const filmsUrl = 'http://localhost:3000/films'; // Replace with your JSON server URL
-
-    // Function to fetch movie data from the server
-    const fetchFilms = async () => {
-        try {
-            const response = await fetch(filmsUrl);
-            const data = await response.json();
-            return data.films; // Assuming films is the key containing movie data in the JSON
-        } catch (error) {
-            console.error('Error fetching data:', error);
-        }
-    };
-
-    // Function to initialize the application
-    const initApp = async () => {
-        const films = await fetchFilms();
-        if (films.length > 0) {
-            displayMovieDetails(films[0]);
-            populateMovieList(films);
-            setupBuyTicketButton(films[0]);
-        }
-    };
-
-    // Function to display movie details
-    const displayMovieDetails = (movie) => {
-        const movieInfoElement = document.getElementById('movie-info');
-        const ticketsAvailable = movie.capacity - movie.tickets_sold;
-
-        movieInfoElement.innerHTML = `
-            <img src="${movie.poster}" alt="${movie.title}" />
-            <div>
-                <h3>${movie.title}</h3>
-                <p><strong>Runtime:</strong> ${movie.runtime} mins</p>
-                <p><strong>Showtime:</strong> ${movie.showtime}</p>
-                <p><strong>Tickets Available:</strong> ${ticketsAvailable}</p>
-                <p>${movie.description}</p>
-            </div>
-        `;
-    };
-
-    // Function to populate the movie list
-    const populateMovieList = (films) => {
-        const filmsListElement = document.getElementById('films');
-
-        films.forEach(film => {
-            const li = document.createElement('li');
-            li.textContent = film.title;
-            li.classList.add('film', 'item');
-            li.addEventListener('click', () => {
-                displayMovieDetails(film);
-                setupBuyTicketButton(film);
-            });
-            filmsListElement.appendChild(li);
+let URL = 'http://localhost:3000/films'
+const listHolder = document.getElementById('films')
+document.addEventListener('DOMContentLoaded', ()=>{
+    document.getElementsByClassName('film item')[0].remove()
+    fetchMovies(URL)
+})
+//Create fetch function to get the data from the db.json
+function fetchMovies(URL){
+    fetch(URL)
+    .then(resp => resp.json())
+    .then(movies => {
+        movies.forEach(movie => {
+            displayMovie(movie)
         });
-    };
-
-    // Function to setup Buy Ticket button functionality
-    const setupBuyTicketButton = (movie) => {
-        const buyTicketButton = document.getElementById('buy-ticket');
-        buyTicketButton.addEventListener('click', () => {
-            if (movie.tickets_sold < movie.capacity) {
-                movie.tickets_sold++;
-                const ticketsAvailable = movie.capacity - movie.tickets_sold;
-                displayMovieDetails(movie);
-                if (ticketsAvailable === 0) {
-                    buyTicketButton.disabled = true;
-                    buyTicketButton.textContent = 'Sold Out';
-                }
-            } else {
-                alert('Sorry, this showing is sold out!');
+    })
+}
+//function to display the titles of the movies as a list;
+function displayMovie(movie){
+    const list = document.createElement('li')
+    list.style.cursor="cell"
+    list.textContent= (movie.title)
+    listHolder.appendChild(list)
+    addClickEvent()
+}
+//Adding the click event listener;
+function addClickEvent(){
+    let children=listHolder.children
+    for(let i=0; i<children.length; i++){
+        let child=children[i]
+        child.addEventListener('click',() => {
+            fetch(`${URL}/${i+1}`)
+            .then(res => res.json())
+            .then(movie => {
+                document.getElementById('buy-ticket').textContent = 'Buy Ticket'
+                setUpMovieDetails(movie)
+            })
+        })
+    }
+}
+//Posting movie details , poster to be displayed;
+ 
+function setUpMovieDetails(funMovie){
+    const preview = document.getElementById('poster')
+    preview.src = funMovie.poster;
+//title
+    const movieTitle = document.querySelector('#title');
+    movieTitle.textContent = funMovie.title;
+    //runtime
+    const movieTime = document.querySelector('#runtime');
+    movieTime.textContent = `${funMovie.runtime} minutes`;
+    //description
+    const movieDescription = document.querySelector('#film-info');
+    movieDescription.textContent = funMovie.description;
+    //Showtime
+    const showTime = document.querySelector('#showtime')
+    showTime.textContent = funMovie.showtime;
+    // available tickets =capacity - tickets sold
+    const tickets  = document.querySelector('#ticket-number')
+    tickets.textContent = funMovie.capacity -funMovie.tickets_sold;
+}
+// //Sold out
+const btn = document.getElementById('buy-ticket')
+        btn.addEventListener('click', function(event){
+            let remainingTickets = document.querySelector('#ticket-number').textContent
+            event.preventDefault()
+            if(remainingTickets > 0){
+                document.querySelector('#ticket-number').textContent  = remainingTickets-1
             }
-        });
-    };
-
-    // Initialize the application
-    initApp();
-});
+            else if(parseInt(remTickets, 10)===0){
+                btn.textContent = 'Sold Out'
+            }
+    })
+Footer
