@@ -1,0 +1,17 @@
+{
+    "name": "wk3-code-challenge",
+    "version": "1.0.0",
+    "description": "Flatdango movie theater app for buying tickets and showing movies that are being showcased.",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+      "movie",
+      "ticket",
+      "soldout",
+      "purchase"
+    ],
+    "author": "Kimathi Njoki",
+    "license": "ISC"
+  }

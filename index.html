@@ -1,73 +1,108 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-
-  <meta charset="UTF-8" />
-  <title>FLATDANGO</title>
-  <link rel="stylesheet" href="./index.css">
-
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flatdango Movie Theater</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Zen+Dots&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Flatdango</title>
 </head>
+
 <body>
 
-
-  <!-- Heading -->
-  <div class="heading">
-    <div class="item">
-      <h2 class="ui header">
-        <i class="orange ticket icon"></i>
-        <div class="content">FLATIRON MOVIE THEATRE</div>
-        <div id="subtitle">BUY MOVIE TICKETS</div>
-      </h2>
-    </div>
-  </div>
-  <div class="ui centered grid">
-    <div class="four wide column">
-      <div class="list-container">
-        <!-- list of the movie to be displayed-->
-        <ul class="ui divided list" id="films">
-          <li class="film item"></li>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="four wide column">
-      <img
-        id="poster"
-        src="assets/placeholderImage.png"
-        alt="[MOVIE TITLE]"
-      />
-    </div>
-    
-    <section id="infobox">
-      <div class="four wide column">
-        <div class="ui cards" id="showing">
-          <div class="card">
-            <div id="title" class="title"></div>
-            <div id="runtime" class="meta">[RUNTIME] minutes</div>
-            <div class="content">
-              <div class="description">
-                <div id="film-info"></div>
-                <span id="showtime" class="ui label">[SHOWTIME]</span>
-                <span id="ticket-number">[--]</span> remaining tickets
-              </div>
-            </div>
-             
-            <div class="extra content">
-              <button id="buy-ticket" class="ui orange button">
-                BUY TICKET
-              </button>
-            </div>
+    <!-- <div class="container">
+        <nav class="navbar navbar-expand-lg bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand me-6" href="#" id="titleHead">FLATDANGO</a>
           </div>
-        </div>
-      </div>
-    </section>
-  </div>
-  <script src="/index.js"></script>
+        </nav>
+    </div> -->
 
-    <script src="index.js"></script>
+    <nav class="navbar bg-dark mt-4 test">
+        <div class="container-fluid text-bg-dark d-flex justify-content-center">
+            <h2 class="text-light" id="headTitle">FLATDANGO</h2>
+
+
+
+
+
+
+            <!-- <form class="d-flex">
+                <input class="form-control" type="text" placeholder="search movie title" id="search">
+                <button class="btn btn-outline-info ms-1" id="searchBtn">SEARCH</button>
+
+            </form> -->
+
+        </div>
+
+        <div class="container-fluid text-bg-dark d-flex justify-content-center">
+            <!-- <a class="navbar-brand text-light">FLATDANGO</a> -->
+            <h4 class="text-light" id="descript">For The Love Of Movies</h4>
+        </div>
+
+    </nav>
+
+
+
+    <div class="container mt-5" id="main-container">
+        <div class="row" id="film-details">
+            <div class="row mt-3" id="">
+
+
+                <div class="card col-4" id="listCont">
+
+
+
+                    <div>
+                        <h2 class="border rounded border-primary mt-2 bg-danger" id="showingTitle">MOVIES SHOWING</h2>
+                        <ul class="list-group" id="showingMovie" >
+
+                        </ul>
+                    </div>
+
+                    <div>
+                        <ul id="soldOut">
+
+                        </ul>
+                    </div>
+
+                </div>
+
+
+                <div class="card col-8" id="mvie">
+                    <h4 class="card-title border border-success mt-2 rounded bg-info" id="filmTitle">Django Unchained</h4>
+                    <img class="card-img-top"
+                        src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                        alt="Film details" id="poster">
+                    <p class="border border-primary mt-2 rounded" id="movieDescription">Lorem ipsum she said its not available to do what she wants to do when she
+                        has to</p>
+
+                    <ul class="d-flex justify-content-center me-2" id="mviedet">
+                        <li class="border border-success rounded me-2"  id="runtime"><span class="border-success me-2">Runtime:</span> 108 minutes</li>
+                        <li class="border border-success rounded me-2" id="showtime">Showtime: 04:16PM</li>
+                        <li class="border border-success rounded me-2" id="ticketsAvailable">Available Tickets 67</li>
+                    </ul>
+
+                    <button type="button" class="btn btn-warning" id="buyTicket">Buy Ticket</button>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/bootstrap.bundle.js"></script>
+    <!-- <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script> -->
+    <script type="text/javascript" src="js/index.js"></script>
+
 </body>
+
 </html>

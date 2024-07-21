@@ -1,0 +1,52 @@
+#filmTitle{
+    text-align: center;
+}
+
+body{
+    background-image: url("https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fG1vdmllJTIwcG9zdGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60");
+}
+
+#showingTitle{
+    text-align: center;
+
+}
+#headTitle{
+    text-align: center;
+}
+#mviedet{
+    list-style: none;
+}
+/* #runtime{
+    background-color: rgb(0, 92, 0);
+} */
+#poster{
+    width: 680px;
+    height: 610px;
+}
+
+.test{
+    margin: 20px;
+    border-radius: 8px;
+}
+
+#headTitle {
+    font-family: 'Zen Dots', cursive;
+}
+#descript{
+    font-family: 'Caveat', cursive;
+}
+#movieDescription{
+    text-align: center;
+}
+#mvie{
+    background-image: url("https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8YmFja2dyb3VuZCUyMGltYWdlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60");
+}
+
+.sinema:hover {
+    cursor: pointer;
+    padding: 20px;
+}
+
+#listCont{
+    background-image: url("https://images.unsplash.com/photo-1506143925201-0252c51780b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGJhY2tncm91bmQlMjBkZXNpZ258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60");
+}

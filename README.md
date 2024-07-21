@@ -1,5 +1,4 @@
-# Wk3-Code-Challenge
-# (Flatdango Movie Theater
+(Flatdango Movie Theater
 )
 
 #### Date, 2024/07/16
@@ -22,36 +21,16 @@ Git clone https://github.com/34Mbithi/Wk3-Code-Challenge
 ```
 
 # Live Link
-[Git](gh-pages link)
-
+[Git](https://codechallenge3new.onrender.com)
 ## Technologies used
 HTML
 CSS
 Github
 Javascript
 
-## Support and contact details
-github.com/hamida-mstafa
 
 ### License
 The content of this site is licensed under the MIT license
 Copyright (c) 2018.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
